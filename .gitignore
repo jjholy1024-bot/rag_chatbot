@@ -54,3 +54,5 @@ Thumbs.db
 # Logs
 *.log
 
+echo .venv/ >> .gitignore
+echo __pycache__/ >> .gitignore
