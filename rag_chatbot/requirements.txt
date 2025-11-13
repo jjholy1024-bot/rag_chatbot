@@ -1,0 +1,52 @@
+# RAG System Requirements
+# 호환 가능한 버전으로 고정
+
+# Core LangChain (최신 안정 버전)
+# 주의: langchain-chroma를 사용하여 deprecated 경고 해결
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-text-splitters>=0.3.0,<0.4.0
+
+# ChromaDB (선택 사항)
+# Windows에서는 C++ Build Tools 없이 설치할 수 없으므로 선택 사항입니다.
+# chromadb 없이도 BM25 검색만으로 동작 가능합니다.
+# chromadb를 사용하려면:
+#   1. Visual C++ Build Tools 설치
+#   2. pip install chromadb==0.4.15 --no-build-isolation
+#   3. 아래 주석 해제
+langchain-chroma>=0.1.0  # chromadb가 없어도 import는 가능 (실제 사용 시에만 오류)
+# chromadb>=0.4.0,<1.0.0  # 선택 사항: chromadb 없이도 BM25 검색 가능
+
+# HuggingFace
+langchain-huggingface>=0.1.0
+transformers>=4.41.0,<5.0.0
+sentence-transformers>=2.2.0
+accelerate>=0.20.0
+peft>=0.6.0
+
+# Quantization
+bitsandbytes>=0.41.0
+
+# PDF Processing
+PyMuPDF>=1.23.0
+pymupdf4llm>=0.0.17
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+
+# Search
+rank-bm25>=0.2.2
+
+# Utilities
+tqdm>=4.65.0
+pytz>=2023.3
+
+# PyTorch (CUDA 지원, 필요시 CUDA 버전 설치)
+# CPU 버전
+torch>=2.0.0
+# CUDA 버전이 필요한 경우 아래 주석 해제하고 위 줄 주석 처리
+# torch>=2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+
